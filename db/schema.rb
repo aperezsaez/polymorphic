@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_05_224324) do
+ActiveRecord::Schema.define(version: 2021_10_05_225700) do
+
+  create_table "animals", force: :cascade do |t|
+    t.string "name"
+    t.integer "heart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["heart_id"], name: "index_animals_on_heart_id"
+  end
 
   create_table "books", force: :cascade do |t|
     t.string "name"
@@ -32,10 +40,24 @@ ActiveRecord::Schema.define(version: 2021_10_05_224324) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hearts", force: :cascade do |t|
+    t.integer "quality"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "libraries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string "name"
+    t.integer "heart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["heart_id"], name: "index_people_on_heart_id"
   end
 
   create_table "retailers", force: :cascade do |t|
