@@ -2,10 +2,14 @@
 
 one:
   name: MyString
-  owner: one
-  owner_type: Owner
+  library: one
+  collector: one
+  retailer: one
+  university: one
 
 two:
   name: MyString
-  owner: two
-  owner_type: Owner
+  library: two
+  collector: two
+  retailer: two
+  university: two

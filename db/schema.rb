@@ -10,15 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_05_222514) do
+ActiveRecord::Schema.define(version: 2021_10_05_224324) do
 
   create_table "books", force: :cascade do |t|
     t.string "name"
-    t.string "owner_type"
-    t.integer "owner_id"
+    t.integer "library_id"
+    t.integer "collector_id"
+    t.integer "retailer_id"
+    t.integer "university_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_type", "owner_id"], name: "index_books_on_owner_type_and_owner_id"
+    t.index ["collector_id"], name: "index_books_on_collector_id"
+    t.index ["library_id"], name: "index_books_on_library_id"
+    t.index ["retailer_id"], name: "index_books_on_retailer_id"
+    t.index ["university_id"], name: "index_books_on_university_id"
   end
 
   create_table "collectors", force: :cascade do |t|

@@ -1,3 +1,3 @@
 class Library < ApplicationRecord
-    has_many :books, as: :owner
+    has_many :books
 end
